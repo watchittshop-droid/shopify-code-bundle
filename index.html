@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="hi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="1000+ Shopify theme and section codes in one bundle.">
+<title>Shopify Code Bundle</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@500;700;800&family=Manrope:wght@400;500;700&display=swap">
+</head>
+<body>
+<style>
+  /* Layout: single centered column, alternating full-width bands; CTA + timer repeat after every section like a sales page */
+  /* Single luxury look: deep royal purple → wine gradient, champagne gold accent, glass cards */
+  :root {
+    --bg: #1a0b2e;
+    --bg2: #3a0f3f;
+    --band: rgba(255, 255, 255, 0.06);
+    --fg: #fbf3e4;
+    --muted: #d4bfe0;
+    --line: rgba(230, 190, 120, 0.28);
+    --accent: #e8c173;
+    --accent-ink: #2a1404;
+    --hot: #e8c173;
+    --hot2: #b8862b;
+    --hot-ink: #2a1404;
+    --star: #f3d27a;
+    --display: "Sora", "Segoe UI", system-ui, sans-serif;
+    --body: "Manrope", "Segoe UI", system-ui, sans-serif;
+    color-scheme: dark;
+  }
+
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); background-image: radial-gradient(1200px 600px at 50% -10%, #6a1e8a 0%, transparent 60%), radial-gradient(900px 500px at 100% 60%, #7a1240 0%, transparent 60%), linear-gradient(180deg, var(--bg) 0%, var(--bg2) 100%); color: var(--fg); overflow-x: clip; font-family: var(--body); font-size: 17px; line-height: 1.55; }
+  section { padding-block: 56px; }
+  section.band { background: var(--band); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); backdrop-filter: blur(10px); }
+  .wrap {
+    max-width: 880px; margin: 0 auto;
+    padding-left: max(16px, env(safe-area-inset-left, 0px));
+    padding-right: max(16px, env(safe-area-inset-right, 0px));
+    text-align: center;
+  }
+  h1, h2 { font-family: var(--display); text-wrap: balance; margin: 0; line-height: 1.15; }
+  h1 { font-size: clamp(1.7rem, 4.5vw, 2.7rem); font-weight: 800; }
+  h2 { font-size: clamp(1.35rem, 3.2vw, 1.9rem); font-weight: 700; }
+  p { margin: 0; }
+  .eyebrow { display: inline-block; font-family: var(--display); font-size: .78rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); margin-bottom: 14px; }
+  .stack { display: grid; gap: 18px; justify-items: center; }
+
+  .cta {
+    display: inline-flex; align-items: center; gap: 10px; flex-wrap: wrap; justify-content: center;
+    background: var(--hot); color: var(--hot-ink); text-decoration: none;
+    font-family: var(--display); font-weight: 800; font-size: 1.15rem;
+    padding: 16px 28px; border-radius: 999px; max-width: 100%;
+    box-shadow: 0 10px 26px -10px var(--hot);
+    animation: pulse 1.8s ease-in-out infinite;
+  }
+  .cta:hover, .cta:focus-visible { filter: brightness(1.07); outline: 3px solid var(--accent); outline-offset: 3px; }
+  .cta s { opacity: .75; font-weight: 500; font-size: .95rem; }
+  @keyframes pulse { 0%,100% { transform: scale(1); } 50% { transform: scale(1.035); } }
+  @media (prefers-reduced-motion: reduce) { .cta { animation: none; } }
+
+  .timer { display: flex; gap: 6px; align-items: center; justify-content: center; font-variant-numeric: tabular-nums; }
+  .timer .cell { background: var(--fg); color: var(--bg); border-radius: 10px; min-width: 64px; padding: 8px 6px; }
+  .timer .cell b { display: block; font-family: var(--display); font-size: 1.7rem; line-height: 1; }
+  .timer .cell span { font-size: .65rem; letter-spacing: .12em; text-transform: uppercase; opacity: .8; }
+  .timer .sep { font-family: var(--display); font-size: 1.6rem; font-weight: 800; }
+  .timer-label { font-size: .9rem; color: var(--hot); font-weight: 700; }
+
+  .guarantee { display: inline-flex; align-items: center; gap: 8px; border: 1.5px solid var(--accent); color: var(--accent); border-radius: 999px; padding: 6px 14px; font-weight: 700; font-size: .9rem; }
+
+  .checks { display: grid; gap: 10px; text-align: left; margin: 0 auto; padding: 0; list-style: none; max-width: 520px; }
+  .checks li { display: flex; gap: 10px; align-items: flex-start; font-weight: 500; }
+  .checks li::before { content: "✓"; color: var(--accent); font-weight: 800; flex: 0 0 auto; }
+
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 14px; width: 100%; }
+  .sample { background: var(--bg); border: 1px solid var(--line); border-radius: 14px; aspect-ratio: 3 / 4; max-width: 100%; display: grid; place-items: center; padding: 14px; text-align: center; min-width: 0; }
+  .sample .tag { font-family: var(--display); font-weight: 700; font-size: .9rem; }
+  .sample .sub { font-size: .78rem; color: var(--muted); }
+
+  /* Screenshot slots: phone-shaped (9:16), drop WhatsApp/Facebook screenshots into reviews/ folder */
+  .marquee { width: 100%; overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
+  .track { display: flex; gap: 16px; width: max-content; animation: slide var(--speed, 28s) linear infinite; }
+  .marquee:hover .track { animation-play-state: paused; }
+  @keyframes slide { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  @media (prefers-reduced-motion: reduce) { .track { animation: none; } .marquee { overflow-x: auto; } }
+  .shot { margin: 0; flex: 0 0 auto; width: 210px; border: 1px solid var(--line); border-radius: 18px; overflow: hidden; background: rgba(0,0,0,.35); box-shadow: 0 18px 40px -20px rgba(0,0,0,.8), inset 0 1px 0 rgba(255,255,255,.1); position: relative; isolation: isolate; aspect-ratio: 9 / 16; max-width: 100%; }
+  .shot img { display: block; width: 100%; height: 100%; object-fit: cover; }
+  .shot figcaption { position: absolute; inset: 0; display: grid; place-items: center; padding: 16px; text-align: center; font-size: .8rem; color: var(--muted); z-index: -1; }
+  .note { font-size: .82rem; color: var(--muted); }
+
+  .faq { width: 100%; max-width: 680px; text-align: left; display: grid; gap: 10px; }
+  details { border: 1px solid var(--line); border-radius: 12px; background: var(--bg); padding: 0 18px; }
+  summary { cursor: pointer; font-weight: 700; padding: 14px 0; list-style: none; display: flex; justify-content: space-between; gap: 12px; }
+  summary::-webkit-details-marker { display: none; }
+  summary::after { content: "+"; color: var(--accent); font-weight: 800; }
+  details[open] summary::after { content: "–"; }
+  details p { padding-bottom: 16px; color: var(--muted); }
+  summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 6px; }
+
+  footer { padding-block: 28px; font-size: .82rem; color: var(--muted); }
+  .email { user-select: all; font-weight: 700; color: var(--fg); }
+
+  /* Luxury finish layered on top of the base rules */
+  h1 { background: linear-gradient(90deg, #fff5dc, var(--accent) 50%, #fff5dc); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .cta { background: linear-gradient(135deg, #f5d98a, var(--hot) 45%, var(--hot2)); box-shadow: 0 12px 34px -8px rgba(232, 193, 115, .7), inset 0 1px 0 rgba(255,255,255,.5); }
+  .timer .cell { background: rgba(0,0,0,.45); color: var(--accent); border: 1px solid var(--line); }
+  .timer .cell span { color: var(--muted); }
+  .timer .sep { color: var(--accent); }
+  .timer-label { color: var(--accent); }
+  .review, details { background: rgba(255,255,255,.05); box-shadow: inset 0 1px 0 rgba(255,255,255,.08); }
+  .sample { background: linear-gradient(160deg, rgba(232,193,115,.16), rgba(255,255,255,.03)); box-shadow: inset 0 1px 0 rgba(255,255,255,.1); }
+  .guarantee { background: rgba(232,193,115,.1); }
+
+  /* Hero video: 16:9 frame with gold border and glow */
+  .video-frame { position: relative; isolation: isolate; width: 100%; max-width: 760px; aspect-ratio: 16 / 9; border-radius: 16px; overflow: hidden; border: 2px solid var(--accent); background: rgba(0,0,0,.5); box-shadow: 0 0 0 6px rgba(232,193,115,.12), 0 30px 60px -25px rgba(0,0,0,.9); }
+  .video-frame video { display: block; width: 100%; height: 100%; object-fit: cover; background: #000; }
+  .video-hint { position: absolute; inset: 0; display: grid; place-items: center; color: var(--muted); font-size: .85rem; z-index: -1; }
+
+  /* Welcome popup */
+  .popup { position: fixed; inset: 0; z-index: 50; display: grid; place-items: center; background: rgba(8, 3, 16, .78); backdrop-filter: blur(6px); padding: max(16px, env(safe-area-inset-left, 0px)); }
+  .popup[hidden] { display: none !important; }
+  .popup-card { width: 100%; max-width: 440px; background: linear-gradient(170deg, #2a1046, #1a0b2e); border: 1.5px solid var(--accent); border-radius: 22px; padding: 32px 24px; text-align: center; display: grid; gap: 14px; justify-items: center; box-shadow: 0 0 0 8px rgba(232,193,115,.12), 0 40px 80px -30px rgba(0,0,0,1); }
+  .popup-icon { font-size: 2.4rem; line-height: 1; }
+  .popup-card h2 { color: var(--accent); }
+  .popup-card p { color: var(--fg); }
+  .popup-small { font-size: .82rem; color: var(--muted) !important; }
+  .popup-btn { animation: none; font-size: 1.05rem; padding: 14px 34px; border: 0; cursor: pointer; margin-top: 6px; }
+</style>
+
+<!-- WELCOME POPUP: shows every time the page opens -->
+<div class="popup" id="welcomePopup" role="dialog" aria-modal="true" aria-labelledby="popupTitle">
+  <div class="popup-card">
+    <div class="popup-icon">✅</div>
+    <h2 id="popupTitle">100% Genuine Content</h2>
+    <p>All theme &amp; section codes in this bundle are genuine, purchased and licensed by us, and delivered to you instantly after payment.</p>
+    <p class="popup-small">This is an independent reseller bundle. Not affiliated with or endorsed by Shopify Inc.</p>
+    <button type="button" class="cta popup-btn" id="popupClose">Continue ➜</button>
+  </div>
+</div>
+
+<!-- HERO -->
+<section>
+  <div class="wrap stack">
+    <span class="eyebrow">For Shopify store owners</span>
+    <h1>1000+ Shopify Theme &amp; Section Codes – One Bundle, One Price</h1>
+    <p class="guarantee">✔ 100% Satisfaction Guaranteed</p>
+    <!-- Put your video at video/intro.mp4 and a thumbnail at video/poster.jpg -->
+    <div class="video-frame">
+      <video id="introVideo" src="video/intro.mp4" poster="video/poster.jpg" controls playsinline muted autoplay loop preload="metadata"></video>
+      <div class="video-hint">video/intro.mp4</div>
+    </div>
+    <a class="cta" href="#checkout">👉 Buy Now &nbsp;<s>₹4999</s>&nbsp; ₹299 only 👈</a>
+    <div class="timer" data-timer aria-live="off">
+      <div class="cell"><b>00</b><span>HRS</span></div><span class="sep">:</span>
+      <div class="cell"><b>15</b><span>MINS</span></div><span class="sep">:</span>
+      <div class="cell"><b>00</b><span>SECS</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT'S INSIDE -->
+<section class="band">
+  <div class="wrap stack">
+    <h2>What's Inside the Bundle</h2>
+    <ul class="checks">
+      <li>1000+ ready-to-use Shopify themes &amp; sections (Liquid, CSS, JS)</li>
+      <li>Works with Dawn and all Online Store 2.0 themes</li>
+      <li>Copy–paste install – no coding knowledge needed</li>
+      <li>Lifetime access + free future updates</li>
+    </ul>
+    <div class="grid">
+      <div class="sample"><div><div class="tag">Fashion Theme Pack</div><div class="sub">120 themes</div></div></div>
+      <div class="sample"><div><div class="tag">Product Page Sections</div><div class="sub">85 sections</div></div></div>
+      <div class="sample"><div><div class="tag">Sticky Add-to-Cart</div><div class="sub">12 variants</div></div></div>
+      <div class="sample"><div><div class="tag">Trust Badges &amp; Timers</div><div class="sub">40 blocks</div></div></div>
+      <div class="sample"><div><div class="tag">Electronics Theme Pack</div><div class="sub">90 themes</div></div></div>
+      <div class="sample"><div><div class="tag">Landing Page Kits</div><div class="sub">60 templates</div></div></div>
+    </div>
+    <p class="note">Replace these cards with real screenshots of your bundle.</p>
+    <a class="cta" href="#checkout">👉 Buy Now &nbsp;<s>₹4999</s>&nbsp; ₹299 only 👈</a>
+    <div class="timer" data-timer aria-live="off">
+      <div class="cell"><b>00</b><span>HRS</span></div><span class="sep">:</span>
+      <div class="cell"><b>15</b><span>MINS</span></div><span class="sep">:</span>
+      <div class="cell"><b>00</b><span>SECS</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section>
+  <div class="wrap stack">
+    <h2>Our Customers' Feedback</h2>
+    <div class="marquee" id="reviewMarquee" aria-label="Customer feedback screenshots">
+      <div class="track" id="reviewTrack"></div>
+    </div>
+    <a class="cta" href="#checkout">👉 Buy Now &nbsp;<s>₹4999</s>&nbsp; ₹299 only 👈</a>
+    <p class="timer-label">Limited Time Offer (Ending Soon)</p>
+    <div class="timer" data-timer aria-live="off">
+      <div class="cell"><b>00</b><span>HRS</span></div><span class="sep">:</span>
+      <div class="cell"><b>15</b><span>MINS</span></div><span class="sep">:</span>
+      <div class="cell"><b>00</b><span>SECS</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="band">
+  <div class="wrap stack">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq">
+      <details><summary>How will I receive the bundle after payment?</summary><p>Right after payment is confirmed you get a download link on the thank-you page and by email.</p></details>
+      <details><summary>How do I install these codes on my Shopify store?</summary><p>Each pack has a short guide: open your theme editor, add a custom Liquid section or paste the code, save. No developer needed.</p></details>
+      <details><summary>How long do I have access?</summary><p>Lifetime. If you lose the link, email us with your payment screenshot and we will resend it.</p></details>
+      <details><summary>What is the size of the bundle?</summary><p>Around 2 GB. You can download everything to your phone or computer.</p></details>
+      <details><summary>Got more questions?</summary><p>Email us at <span class="email">support@yourdomain.com</span></p></details>
+    </div>
+    <a class="cta" id="checkout" href="https://your-checkout-link.example">BUY NOW — ₹299</a>
+  </div>
+</section>
+
+
+<script>
+  // Welcome popup: shown every time the page opens; Continue closes it.
+  (function () {
+    var pop = document.getElementById('welcomePopup'), btn = document.getElementById('popupClose');
+    document.body.style.overflow = 'hidden';
+    btn.addEventListener('click', function () { pop.hidden = true; document.body.style.overflow = ''; });
+  })();
+
+  // Review screenshots: put 10 images in the reviews/ folder as review-1.jpg … review-10.jpg.
+  // Change COUNT if you have more/fewer, and SPEED (seconds per loop) to make it faster/slower.
+  (function () {
+    var COUNT = 10, SPEED = 28, EXT = 'jpg';
+    var track = document.getElementById('reviewTrack'), html = '';
+    for (var pass = 0; pass < 2; pass++) {            // duplicated once so the loop never shows a gap
+      for (var i = 1; i <= COUNT; i++) {
+        html += '<figure class="shot"><img src="reviews/review-' + i + '.' + EXT + '" alt="Customer feedback screenshot ' + i + '" loading="lazy">' +
+                '<figcaption>reviews/review-' + i + '.' + EXT + '</figcaption></figure>';
+      }
+    }
+    track.innerHTML = html;
+    track.style.setProperty('--speed', SPEED + 's');
+  })();
+
+  // 15-minute countdown. The deadline is stored per visitor so a refresh does not reset it.
+  (function () {
+    var MIN = 15, key = 'bundle_deadline', deadline;
+    try { deadline = +localStorage.getItem(key); } catch (e) {}
+    if (!deadline || deadline < Date.now()) {
+      deadline = Date.now() + MIN * 60 * 1000;
+      try { localStorage.setItem(key, deadline); } catch (e) {}
+    }
+    var timers = document.querySelectorAll('[data-timer]');
+    function pad(n) { return (n < 10 ? '0' : '') + n; }
+    function tick() {
+      var left = Math.max(0, deadline - Date.now()), s = Math.floor(left / 1000);
+      var h = pad(Math.floor(s / 3600)), m = pad(Math.floor(s % 3600 / 60)), sec = pad(s % 60);
+      timers.forEach(function (t) {
+        var b = t.querySelectorAll('b'); b[0].textContent = h; b[1].textContent = m; b[2].textContent = sec;
+      });
+    }
+    tick(); setInterval(tick, 1000);
+  })();
+</script>
+
+</body>
+</html>
