@@ -1,269 +1,1041 @@
 <!doctype html>
-<html lang="hi">
+<html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="1000+ Shopify theme and section codes in one bundle.">
-<title>🔞 18+ ONLY 🔞</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@500;700;800&family=Manrope:wght@400;500;700&display=swap">
-</head>
-<body>
-<style>
-  /* Layout: single centered column, alternating full-width bands; CTA + timer repeat after every section like a sales page */
-  /* Single luxury look: deep royal purple → wine gradient, champagne gold accent, glass cards */
-  :root {
-    --bg: #1a0b2e;
-    --bg2: #3a0f3f;
-    --band: rgba(255, 255, 255, 0.06);
-    --fg: #fbf3e4;
-    --muted: #d4bfe0;
-    --line: rgba(230, 190, 120, 0.28);
-    --accent: #e8c173;
-    --accent-ink: #2a1404;
-    --hot: #e8c173;
-    --hot2: #b8862b;
-    --hot-ink: #2a1404;
-    --star: #f3d27a;
-    --display: "Sora", "Segoe UI", system-ui, sans-serif;
-    --body: "Manrope", "Segoe UI", system-ui, sans-serif;
-    color-scheme: dark;
-  }
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Comic World — Massive Indian Comics Collection</title>
+  <meta name="description" content="Massive Indian comics collection in Hindi and English with PDFs and 4K videos.">
+  <link rel="preconnect" href="https://comicbundle.digital">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23000'/%3E%3Cpath d='M12 13h40v31H29l-10 8v-8h-7z' fill='%23d21cbc' stroke='%23fff' stroke-width='3'/%3E%3Cpath d='M21 24h22M21 32h16' stroke='%23fff' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E">
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
 
-  * { box-sizing: border-box; }
-  body { margin: 0; background: var(--bg); background-image: radial-gradient(1200px 600px at 50% -10%, #6a1e8a 0%, transparent 60%), radial-gradient(900px 500px at 100% 60%, #7a1240 0%, transparent 60%), linear-gradient(180deg, var(--bg) 0%, var(--bg2) 100%); color: var(--fg); overflow-x: clip; font-family: var(--body); font-size: 17px; line-height: 1.55; }
-  section { padding-block: 56px; }
-  section.band { background: var(--band); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); backdrop-filter: blur(10px); }
-  .wrap {
-    max-width: 880px; margin: 0 auto;
-    padding-left: max(16px, env(safe-area-inset-left, 0px));
-    padding-right: max(16px, env(safe-area-inset-right, 0px));
-    text-align: center;
-  }
-  h1, h2 { font-family: var(--display); text-wrap: balance; margin: 0; line-height: 1.15; }
-  h1 { font-size: clamp(1.7rem, 4.5vw, 2.7rem); font-weight: 800; }
-  h2 { font-size: clamp(1.35rem, 3.2vw, 1.9rem); font-weight: 700; }
-  p { margin: 0; }
-  .eyebrow { display: inline-block; font-family: var(--display); font-size: .78rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); margin-bottom: 14px; }
-  .stack { display: grid; gap: 18px; justify-items: center; }
+    html {
+      scroll-behavior: smooth;
+      -webkit-text-size-adjust: 100%;
+    }
 
-  .cta {
-    display: inline-flex; align-items: center; gap: 10px; flex-wrap: wrap; justify-content: center;
-    background: var(--hot); color: var(--hot-ink); text-decoration: none;
-    font-family: var(--display); font-weight: 800; font-size: 1.15rem;
-    padding: 16px 28px; border-radius: 999px; max-width: 100%;
-    box-shadow: 0 10px 26px -10px var(--hot);
-    animation: pulse 1.8s ease-in-out infinite;
-  }
-  .cta:hover, .cta:focus-visible { filter: brightness(1.07); outline: 3px solid var(--accent); outline-offset: 3px; }
-  .cta s { opacity: .75; font-weight: 500; font-size: .95rem; }
-  @keyframes pulse { 0%,100% { transform: scale(1); } 50% { transform: scale(1.035); } }
-  @media (prefers-reduced-motion: reduce) { .cta { animation: none; } }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: #09090f;
+      color: #ffffff;
+      line-height: 1.5;
+      overflow-x: hidden;
+    }
 
-  .timer { display: flex; gap: 6px; align-items: center; justify-content: center; font-variant-numeric: tabular-nums; }
-  .timer .cell { background: var(--fg); color: var(--bg); border-radius: 10px; min-width: 64px; padding: 8px 6px; }
-  .timer .cell b { display: block; font-family: var(--display); font-size: 1.7rem; line-height: 1; }
-  .timer .cell span { font-size: .65rem; letter-spacing: .12em; text-transform: uppercase; opacity: .8; }
-  .timer .sep { font-family: var(--display); font-size: 1.6rem; font-weight: 800; }
-  .timer-label { font-size: .9rem; color: var(--hot); font-weight: 700; }
+    body.checkout-mode {
+      background: #f5f5f7;
+      color: #111111;
+    }
 
-  .guarantee { display: inline-flex; align-items: center; gap: 8px; border: 1.5px solid var(--accent); color: var(--accent); border-radius: 999px; padding: 6px 14px; font-weight: 700; font-size: .9rem; }
+    img, video {
+      max-width: 100%;
+      display: block;
+    }
 
-  .checks { display: grid; gap: 10px; text-align: left; margin: 0 auto; padding: 0; list-style: none; max-width: 520px; }
-  .checks li { display: flex; gap: 10px; align-items: flex-start; font-weight: 500; }
-  .checks li::before { content: "✓"; color: var(--accent); font-weight: 800; flex: 0 0 auto; }
+    /* =========================================
+       VIEW SWITCHING
+       ========================================= */
+    #landing-view {
+      display: block;
+    }
 
-  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 14px; width: 100%; }
-  .sample { background: var(--bg); border: 1px solid var(--line); border-radius: 14px; aspect-ratio: 3 / 4; max-width: 100%; display: grid; place-items: center; padding: 14px; text-align: center; min-width: 0; }
-  .sample .tag { font-family: var(--display); font-weight: 700; font-size: .9rem; }
-  .sample .sub { font-size: .78rem; color: var(--muted); }
+    #checkout-view {
+      display: none;
+      min-height: 100vh;
+      background: #f5f5f7;
+      color: #111111;
+    }
 
-  /* Screenshot slots: phone-shaped (9:16), drop WhatsApp/Facebook screenshots into reviews/ folder */
-  .marquee { width: 100%; overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
-  .track { display: flex; gap: 16px; width: max-content; animation: slide var(--speed, 28s) linear infinite; }
-  .marquee:hover .track { animation-play-state: paused; }
-  @keyframes slide { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-  @media (prefers-reduced-motion: reduce) { .track { animation: none; } .marquee { overflow-x: auto; } }
-  .shot { margin: 0; flex: 0 0 auto; width: 210px; border: 1px solid var(--line); border-radius: 18px; overflow: hidden; background: rgba(0,0,0,.35); box-shadow: 0 18px 40px -20px rgba(0,0,0,.8), inset 0 1px 0 rgba(255,255,255,.1); position: relative; isolation: isolate; aspect-ratio: 9 / 16; max-width: 100%; }
-  .shot img { display: block; width: 100%; height: 100%; object-fit: cover; }
-  .shot figcaption { position: absolute; inset: 0; display: grid; place-items: center; padding: 16px; text-align: center; font-size: .8rem; color: var(--muted); z-index: -1; }
-  .note { font-size: .82rem; color: var(--muted); }
+    body.checkout-mode #landing-view,
+    body.checkout-mode .mobile-cta {
+      display: none !important;
+    }
 
-  .faq { width: 100%; max-width: 680px; text-align: left; display: grid; gap: 10px; }
-  details { border: 1px solid var(--line); border-radius: 12px; background: var(--bg); padding: 0 18px; }
-  summary { cursor: pointer; font-weight: 700; padding: 14px 0; list-style: none; display: flex; justify-content: space-between; gap: 12px; }
-  summary::-webkit-details-marker { display: none; }
-  summary::after { content: "+"; color: var(--accent); font-weight: 800; }
-  details[open] summary::after { content: "–"; }
-  details p { padding-bottom: 16px; color: var(--muted); }
-  summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 6px; }
+    body.checkout-mode #checkout-view {
+      display: block;
+    }
 
-  footer { padding-block: 28px; font-size: .82rem; color: var(--muted); }
-  .email { user-select: all; font-weight: 700; color: var(--fg); }
+    /* =========================================
+       LANDING PAGE STYLES (index.html)
+       ========================================= */
+    #landing-view .page-shell {
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 20px 16px 96px;
+    }
 
-  /* Luxury finish layered on top of the base rules */
-  h1 { background: linear-gradient(90deg, #fff5dc, var(--accent) 50%, #fff5dc); -webkit-background-clip: text; background-clip: text; color: transparent; }
-  .cta { background: linear-gradient(135deg, #f5d98a, var(--hot) 45%, var(--hot2)); box-shadow: 0 12px 34px -8px rgba(232, 193, 115, .7), inset 0 1px 0 rgba(255,255,255,.5); }
-  .timer .cell { background: rgba(0,0,0,.45); color: var(--accent); border: 1px solid var(--line); }
-  .timer .cell span { color: var(--muted); }
-  .timer .sep { color: var(--accent); }
-  .timer-label { color: var(--accent); }
-  .review, details { background: rgba(255,255,255,.05); box-shadow: inset 0 1px 0 rgba(255,255,255,.08); }
-  .sample { background: linear-gradient(160deg, rgba(232,193,115,.16), rgba(255,255,255,.03)); box-shadow: inset 0 1px 0 rgba(255,255,255,.1); }
-  .guarantee { background: rgba(232,193,115,.1); }
+    #landing-view .hero {
+      text-align: center;
+      padding: 6px 0 24px;
+    }
 
-  /* Hero video: 16:9 frame with gold border and glow */
-  .video-frame { position: relative; isolation: isolate; width: 100%; max-width: 760px; aspect-ratio: 16 / 9; border-radius: 16px; overflow: hidden; border: 2px solid var(--accent); background: rgba(0,0,0,.5); box-shadow: 0 0 0 6px rgba(232,193,115,.12), 0 30px 60px -25px rgba(0,0,0,.9); }
-  .video-frame video { display: block; width: 100%; height: 100%; object-fit: cover; background: #000; }
-  .video-hint { position: absolute; inset: 0; display: grid; place-items: center; color: var(--muted); font-size: .85rem; z-index: -1; }
+    #landing-view .hero h1 {
+      margin: 0 auto 10px;
+      max-width: 920px;
+      font-size: clamp(1.55rem, 3.6vw, 2.5rem);
+      font-weight: 800;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      color: #ffffff;
+    }
 
-  /* Welcome popup */
-  .popup { position: fixed; inset: 0; z-index: 50; display: grid; place-items: center; background: rgba(8, 3, 16, .78); backdrop-filter: blur(6px); padding: max(16px, env(safe-area-inset-left, 0px)); }
-  .popup[hidden] { display: none !important; }
-  .popup-card { width: 100%; max-width: 440px; background: linear-gradient(170deg, #2a1046, #1a0b2e); border: 1.5px solid var(--accent); border-radius: 22px; padding: 32px 24px; text-align: center; display: grid; gap: 14px; justify-items: center; box-shadow: 0 0 0 8px rgba(232,193,115,.12), 0 40px 80px -30px rgba(0,0,0,1); }
-  .popup-icon { font-size: 2.4rem; line-height: 1; }
-  .popup-card h2 { color: var(--accent); }
-  .popup-card p { color: var(--fg); }
-  .popup-small { font-size: .82rem; color: var(--muted) !important; }
-  .popup-btn { animation: none; font-size: 1.05rem; padding: 14px 34px; border: 0; cursor: pointer; margin-top: 6px; }
-</style>
+    #landing-view .hero h1 span {
+      color: #ffde3b;
+    }
 
-<!-- WELCOME POPUP: shows every time the page opens -->
-<div class="popup" id="welcomePopup" role="dialog" aria-modal="true" aria-labelledby="popupTitle">
-  <div class="popup-card">
-    <div class="popup-icon">✅</div>
-    <h2 id="popupTitle">Are you 18 or older?</h2>
-    <p>Get EXCLUSIVE private videos from verified creators in one bundle —
-content you won't find on any free platform.</p>
-    <p class="popup-small"></p>
-    <button type="button" class="cta popup-btn" id="popupClose">Continue ➜</button>
-  </div>
-</div>
+    #landing-view .desktop-break {
+      display: none;
+    }
 
-<!-- HERO -->
-<section>
-  <div class="wrap stack">
-    <span class="eyebrow">🔞 18+ ONLY 🔞</span>
-    <h1>Get EXCLUSIVE private videos from verified creators in one bundle —
-content you won't find on any free platform.</h1>
-    <p class="guarantee">✔ 100% Satisfaction Guaranteed</p>
-    <!-- Put your video at video/intro.mp4 and a thumbnail at video/poster.jpg -->
-    <div class="video-frame">
-      <video id="introVideo" src="video/intro.mp4" poster="video/poster.jpg" controls playsinline muted autoplay loop preload="metadata"></video>
-      <div class="video-hint">video/intro.mp4</div>
-    </div>
-    <a class="cta" href="#checkout">👉 Buy Now &nbsp;<s>₹4999</s>&nbsp; ₹299 only 👈</a>
-    <div class="timer" data-timer aria-live="off">
-      <div class="cell"><b>00</b><span>HRS</span></div><span class="sep">:</span>
-      <div class="cell"><b>15</b><span>MINS</span></div><span class="sep">:</span>
-      <div class="cell"><b>00</b><span>SECS</span></div>
-    </div>
-  </div>
-</section>
-
-<!-- WHAT'S INSIDE -->
-<section class="band">
-  <div class="wrap stack">
-    <h2>What's Inside the Bundle</h2>
-    <ul class="checks">
-      <li>🎁 500+ HD videos · fresh content every week</li>
-      <li>✅ 100% verified creators · published with full consent</li>
-      <li>📱 Works on both Android &amp iPhone</li>
-      <li>💳 One-time payment — lifetime access</li>
-    </ul>
-    <div class="grid">
-      <div class="sample"><div><div class="tag">Private Videos</div><div class="sub">120 themes</div></div></div>
-      <div class="sample"><div><div class="tag">Outdoor Videos</div><div class="sub">85 sections</div></div></div>
-      <div class="sample"><div><div class="tag">Bathroom Videos</div><div class="sub">12 variants</div></div></div>
-      <div class="sample"><div><div class="tag">Baaje Videos &amp; in Noida</div><div class="sub">40 blocks</div></div></div>
-      <div class="sample"><div><div class="tag">Electronics Theme Pack</div><div class="sub">90 themes</div></div></div>
-      <div class="sample"><div><div class="tag">Landing Page Kits</div><div class="sub">60 templates</div></div></div>
-    </div>
-    <p class="note">No need to pay ₹500–₹1000 in monthly subscriptions anymore ❌</p>
-    <a class="cta" href="#checkout">👉 Get it now: &nbsp;<s>₹4999</s>&nbsp; ₹399 only 👈</a>
-    <div class="timer" data-timer aria-live="off">
-      <div class="cell"><b>00</b><span>HRS</span></div><span class="sep">:</span>
-      <div class="cell"><b>15</b><span>MINS</span></div><span class="sep">:</span>
-      <div class="cell"><b>00</b><span>SECS</span></div>
-    </div>
-  </div>
-</section>
-
-<!-- REVIEWS -->
-<section>
-  <div class="wrap stack">
-    <h2>Our Customers' Feedback</h2>
-    <div class="marquee" id="reviewMarquee" aria-label="Customer feedback screenshots">
-      <div class="track" id="reviewTrack"></div>
-    </div>
-    <a class="cta" href="#checkout">👉 Get it now: &nbsp;<s>₹4999</s>&nbsp; ₹399 only 👈</a>
-    <p class="timer-label">Limited Time Offer (Ending Soon)</p>
-    <div class="timer" data-timer aria-live="off">
-      <div class="cell"><b>00</b><span>HRS</span></div><span class="sep">:</span>
-      <div class="cell"><b>15</b><span>MINS</span></div><span class="sep">:</span>
-      <div class="cell"><b>00</b><span>SECS</span></div>
-    </div>
-  </div>
-</section>
-
-<!-- FAQ -->
-<section class="band">
-  <div class="wrap stack">
-    <h2>Frequently Asked Questions</h2>
-    <div class="faq">
-      <details><summary>How will I receive the bundle after payment?</summary><p>As soon as your payment is confirmed, the download link appears on the thank-you page and is sent to your email/WhatsApp instantly.</p></details>
-      <details><summary>Is this content legal? Are these leaked videos?</summary><p>Absolutely not. Every video is published under a written consent and license agreement with the creator, who receives a share of the revenue. All creators have completed age verification (18+).</p></details>
-      <details><summary>How long do I have access?</summary><p>Lifetime. If you lose the link, email us with your payment screenshot and we will resend it.</p></details>
-      <details><summary>How long do I have access?</summary><p>Lifetime. If you lose the link, message support with your payment screenshot and we will resend it.</p></details>
-      <details><summary>Will it work on my phone?</summary><p>Yes — Android, iPhone and computers. All files are in MP4 format. <span class="email">support@gmail.com</span></p></details>
-    </div>
-    <a class="cta" id="checkout" href="https://your-checkout-link.example">BUY NOW — ₹399</a>
-  </div>
-</section>
-
-
-<script>
-  // Welcome popup: shown every time the page opens; Continue closes it.
-  (function () {
-    var pop = document.getElementById('welcomePopup'), btn = document.getElementById('popupClose');
-    document.body.style.overflow = 'hidden';
-    btn.addEventListener('click', function () { pop.hidden = true; document.body.style.overflow = ''; });
-  })();
-
-  // Review screenshots: put 10 images in the reviews/ folder as review-1.jpg … review-10.jpg.
-  // Change COUNT if you have more/fewer, and SPEED (seconds per loop) to make it faster/slower.
-  (function () {
-    var COUNT = 10, SPEED = 28, EXT = 'jpg';
-    var track = document.getElementById('reviewTrack'), html = '';
-    for (var pass = 0; pass < 2; pass++) {            // duplicated once so the loop never shows a gap
-      for (var i = 1; i <= COUNT; i++) {
-        html += '<figure class="shot"><img src="reviews/review-' + i + '.' + EXT + '" alt="Customer feedback screenshot ' + i + '" loading="lazy">' +
-                '<figcaption>reviews/review-' + i + '.' + EXT + '</figcaption></figure>';
+    @media (min-width: 768px) {
+      #landing-view .desktop-break {
+        display: inline;
       }
     }
-    track.innerHTML = html;
-    track.style.setProperty('--speed', SPEED + 's');
-  })();
 
-  // 15-minute countdown. The deadline is stored per visitor so a refresh does not reset it.
-  (function () {
-    var MIN = 15, key = 'bundle_deadline', deadline;
-    try { deadline = +localStorage.getItem(key); } catch (e) {}
-    if (!deadline || deadline < Date.now()) {
-      deadline = Date.now() + MIN * 60 * 1000;
-      try { localStorage.setItem(key, deadline); } catch (e) {}
+    #landing-view .hero h2 {
+      margin: 0 auto 18px;
+      font-size: clamp(0.95rem, 2vw, 1.25rem);
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      color: #e5e7eb;
     }
-    var timers = document.querySelectorAll('[data-timer]');
-    function pad(n) { return (n < 10 ? '0' : '') + n; }
-    function tick() {
-      var left = Math.max(0, deadline - Date.now()), s = Math.floor(left / 1000);
-      var h = pad(Math.floor(s / 3600)), m = pad(Math.floor(s % 3600 / 60)), sec = pad(s % 60);
-      timers.forEach(function (t) {
-        var b = t.querySelectorAll('b'); b[0].textContent = h; b[1].textContent = m; b[2].textContent = sec;
+
+    #landing-view .hero h2 span {
+      color: #f43f5e;
+      background: rgba(244, 63, 94, 0.14);
+      padding: 2px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(244, 63, 94, 0.35);
+      display: inline-block;
+      margin-left: 4px;
+    }
+
+    #landing-view .video-frame {
+      max-width: 680px;
+      margin: 0 auto 22px;
+      border-radius: 16px;
+      overflow: hidden;
+      background: #000000;
+      border: 2px solid rgba(210, 28, 188, 0.55);
+      box-shadow: 0 18px 48px rgba(210, 28, 188, 0.22), 0 6px 20px rgba(0, 0, 0, 0.6);
+      aspect-ratio: 16 / 9;
+    }
+
+    #landing-view .video-frame video {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      background: #000000;
+    }
+
+    /* Buy Now CTA Button */
+    #landing-view .buy-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      width: 100%;
+      max-width: 540px;
+      margin: 0 auto;
+      padding: 18px 24px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, #d21cbc 0%, #7c3aed 100%);
+      color: #ffffff;
+      text-decoration: none;
+      font-size: clamp(1.05rem, 2.8vw, 1.35rem);
+      font-weight: 800;
+      text-align: center;
+      border: 2px solid rgba(255, 255, 255, 0.25);
+      box-shadow: 0 12px 30px rgba(210, 28, 188, 0.45);
+      transition: transform 0.18s ease, box-shadow 0.18s ease, filter 0.18s ease;
+      cursor: pointer;
+      animation: ctaPulse 2.2s infinite;
+    }
+
+    #landing-view .buy-button:hover {
+      transform: translateY(-2px) scale(1.01);
+      box-shadow: 0 16px 36px rgba(210, 28, 188, 0.62);
+      filter: brightness(1.06);
+    }
+
+    #landing-view .buy-button:active {
+      transform: translateY(0);
+    }
+
+    #landing-view .buy-button s {
+      color: #fde047;
+      opacity: 0.9;
+      font-weight: 700;
+    }
+
+    @keyframes ctaPulse {
+      0%, 100% {
+        box-shadow: 0 10px 28px rgba(210, 28, 188, 0.42);
+      }
+      50% {
+        box-shadow: 0 14px 38px rgba(210, 28, 188, 0.72);
+      }
+    }
+
+    /* Countdown Timer */
+    #landing-view .countdown {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin: 22px auto 0;
+    }
+
+    #landing-view .countdown.mid-countdown {
+      margin-top: 30px;
+    }
+
+    #landing-view .countdown > div {
+      background: linear-gradient(180deg, #1b1b29 0%, #12121c 100%);
+      border: 1px solid rgba(210, 28, 188, 0.45);
+      border-radius: 12px;
+      min-width: 76px;
+      padding: 10px 12px;
+      text-align: center;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
+    }
+
+    #landing-view .countdown strong {
+      display: block;
+      font-size: clamp(1.4rem, 3.5vw, 1.85rem);
+      font-weight: 800;
+      line-height: 1.1;
+      color: #ffde3b;
+      font-variant-numeric: tabular-nums;
+    }
+
+    #landing-view .countdown small {
+      display: block;
+      margin-top: 4px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: #cbd5e1;
+    }
+
+    #landing-view .countdown > b {
+      font-size: 1.5rem;
+      color: #d21cbc;
+      line-height: 1;
+    }
+
+    /* Sections */
+    #landing-view .section {
+      margin-top: 44px;
+      padding-top: 8px;
+    }
+
+    #landing-view .section-bar {
+      margin: 0 auto 20px;
+      padding: 13px 20px;
+      background: linear-gradient(90deg, #d21cbc 0%, #7c3aed 100%);
+      color: #ffffff;
+      text-align: center;
+      font-size: clamp(1.15rem, 2.8vw, 1.55rem);
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(124, 58, 237, 0.32);
+    }
+
+    #landing-view .benefits {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 26px;
+    }
+
+    #landing-view .benefits p {
+      margin: 0;
+      padding: 10px 18px;
+      background: #151522;
+      border: 1px solid rgba(255, 222, 59, 0.35);
+      border-radius: 999px;
+      font-size: 0.98rem;
+      font-weight: 700;
+      color: #fef08a;
+    }
+
+    /* Image Grids */
+    #landing-view .image-grid {
+      display: grid;
+      gap: 16px;
+    }
+
+    #landing-view .image-grid figure {
+      margin: 0;
+      background: #141420;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.4);
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    #landing-view .image-grid figure:hover {
+      transform: translateY(-4px);
+      border-color: rgba(210, 28, 188, 0.7);
+    }
+
+    #landing-view .image-grid img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    #landing-view .sample-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (min-width: 720px) {
+      #landing-view .sample-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+      }
+    }
+
+    /* Customer Feedback Section */
+    #landing-view .feedback {
+      text-align: center;
+    }
+
+    #landing-view .feedback > h2 {
+      margin: 0 auto 24px;
+      font-size: clamp(1.2rem, 3vw, 1.75rem);
+      font-weight: 800;
+      color: #ffde3b;
+      line-height: 1.3;
+    }
+
+    #landing-view .feedback-grid {
+      grid-template-columns: 1fr;
+      max-width: 380px;
+      margin: 0 auto 30px;
+    }
+
+    @media (min-width: 680px) {
+      #landing-view .feedback-grid {
+        grid-template-columns: repeat(3, 1fr);
+        max-width: 100%;
+        gap: 20px;
+      }
+    }
+
+    #landing-view .second-buy {
+      margin-top: 6px;
+    }
+
+    #landing-view .offer-note {
+      margin: 14px 0 0;
+      font-size: 1rem;
+      font-weight: 700;
+      color: #fb7185;
+      letter-spacing: 0.02em;
+    }
+
+    /* FAQ Accordion */
+    #landing-view .faq > h2 {
+      text-align: center;
+      margin: 0 auto 22px;
+      font-size: clamp(1.3rem, 3vw, 1.8rem);
+      font-weight: 800;
+      color: #ffffff;
+    }
+
+    #landing-view .accordion {
+      max-width: 820px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    #landing-view .accordion details {
+      background: #141421;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 12px;
+      overflow: hidden;
+      transition: border-color 0.2s ease;
+    }
+
+    #landing-view .accordion details[open] {
+      border-color: rgba(210, 28, 188, 0.65);
+    }
+
+    #landing-view .accordion summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 16px 20px;
+      font-size: 1.02rem;
+      font-weight: 700;
+      color: #f8fafc;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    #landing-view .accordion summary::-webkit-details-marker {
+      display: none;
+    }
+
+    #landing-view .accordion summary::after {
+      content: "+";
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: #d21cbc;
+      flex-shrink: 0;
+      line-height: 1;
+    }
+
+    #landing-view .accordion details[open] summary::after {
+      content: "−";
+    }
+
+    #landing-view .accordion details p {
+      margin: 0;
+      padding: 0 20px 18px;
+      color: #cbd5e1;
+      font-size: 0.96rem;
+      line-height: 1.6;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      padding-top: 12px;
+    }
+
+    #landing-view .accordion details a {
+      color: #f472b6;
+      text-decoration: underline;
+      word-break: break-word;
+    }
+
+    /* Sticky Mobile CTA */
+    .mobile-cta {
+      position: fixed;
+      left: 12px;
+      right: 12px;
+      bottom: 12px;
+      z-index: 90;
+      display: block;
+      padding: 15px 20px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #d21cbc 0%, #7c3aed 100%);
+      color: #ffffff;
+      text-align: center;
+      text-decoration: none;
+      font-size: 1.08rem;
+      font-weight: 800;
+      letter-spacing: 0.03em;
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.65), 0 0 20px rgba(210, 28, 188, 0.55);
+      border: 1px solid rgba(255, 255, 255, 0.28);
+    }
+
+    @media (min-width: 769px) {
+      .mobile-cta {
+        display: none;
+      }
+      #landing-view .page-shell {
+        padding-bottom: 56px;
+      }
+    }
+
+    /* =========================================
+       CHECKOUT PAGE STYLES (checkout.html)
+       ========================================= */
+    #checkout-view .topbar {
+      background: #ffffff;
+      border-bottom: 1px solid #e5e5e5;
+      padding: 12px 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    #checkout-view .topbar a {
+      text-decoration: none;
+      color: #777777;
+      font-size: 15px;
+      padding: 8px 12px;
+      border-radius: 8px;
+      transition: background 0.15s ease, color 0.15s ease;
+    }
+
+    #checkout-view .topbar a:hover {
+      color: #111111;
+      background: #f5f5f5;
+    }
+
+    #checkout-view .topbar a.active {
+      color: #111111;
+      font-weight: 600;
+      background: #f0f0f0;
+    }
+
+    #checkout-view .container {
+      max-width: 480px;
+      margin: 0 auto;
+      padding: 24px 16px 60px;
+    }
+
+    #checkout-view h2 {
+      margin: 0 0 20px;
+      font-size: 18px;
+      font-weight: 600;
+      color: #111111;
+    }
+
+    #checkout-view .card {
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 20px 16px;
+      margin-bottom: 24px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    }
+
+    #checkout-view .section-title {
+      font-size: 16px;
+      font-weight: 700;
+      margin: 0 0 16px;
+      color: #111111;
+    }
+
+    #checkout-view .form-group {
+      margin-bottom: 16px;
+    }
+
+    #checkout-view .form-group:last-child {
+      margin-bottom: 0;
+    }
+
+    #checkout-view .form-group label {
+      display: block;
+      font-size: 14px;
+      color: #333333;
+      margin-bottom: 6px;
+      font-weight: 500;
+    }
+
+    #checkout-view .form-group input {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1px solid #d1d5db;
+      border-radius: 8px;
+      font-size: 15px;
+      background: #f9fafb;
+      color: #111111;
+      font-family: inherit;
+    }
+
+    #checkout-view .form-group input:focus {
+      outline: none;
+      border-color: #2563eb;
+      background: #ffffff;
+    }
+
+    #checkout-view .form-group input.input-error {
+      border-color: #dc2626;
+      background: #fef2f2;
+    }
+
+    #checkout-view .required {
+      color: #dc2626;
+      margin-left: 4px;
+    }
+
+    #checkout-view .error-banner {
+      display: none;
+      background: #fef2f2;
+      color: #b91c1c;
+      border: 1px solid #fecaca;
+      border-radius: 8px;
+      padding: 10px 12px;
+      font-size: 13.5px;
+      font-weight: 500;
+      margin-bottom: 16px;
+    }
+
+    #checkout-view .error-banner.visible {
+      display: block;
+    }
+
+    #checkout-view .order-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 8px;
+      background: #ffffff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    }
+
+    #checkout-view .order-table td {
+      padding: 12px 14px;
+      border-bottom: 1px solid #e5e7eb;
+      font-size: 14px;
+      color: #111111;
+    }
+
+    #checkout-view .order-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    #checkout-view .order-table td:last-child {
+      text-align: right;
+      font-weight: 600;
+    }
+
+    #checkout-view .order-table td.product-cell {
+      text-align: left;
+    }
+
+    #checkout-view .product-summary {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    #checkout-view .product-summary img {
+      width: 52px;
+      height: 52px;
+      object-fit: cover;
+      border-radius: 6px;
+      flex-shrink: 0;
+    }
+
+    #checkout-view .total-row td {
+      font-size: 16px;
+      font-weight: 700;
+    }
+
+    #checkout-view .pay-method {
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 16px;
+      margin-top: 18px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    }
+
+    #checkout-view .pay-method h4 {
+      margin: 0 0 8px;
+      font-size: 15px;
+      font-weight: 600;
+      color: #111111;
+    }
+
+    #checkout-view .pay-method p {
+      margin: 0 0 12px;
+      font-size: 13px;
+      color: #555555;
+      line-height: 1.5;
+    }
+
+    #checkout-view .privacy-text {
+      font-size: 12px;
+      color: #666666;
+      margin-top: 12px;
+      line-height: 1.4;
+    }
+
+    #checkout-view .place-order-btn {
+      display: block;
+      width: 100%;
+      background: #7c3aed;
+      color: #ffffff;
+      border: none;
+      border-radius: 10px;
+      padding: 16px;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      margin-top: 24px;
+      transition: background 0.15s ease, transform 0.1s ease;
+    }
+
+    #checkout-view .place-order-btn:hover {
+      background: #6d28d9;
+    }
+
+    #checkout-view .place-order-btn:active {
+      transform: scale(0.99);
+    }
+
+    #checkout-view .guarantee {
+      text-align: center;
+      font-size: 15px;
+      font-weight: 700;
+      color: #111111;
+      margin-top: 32px;
+      padding-bottom: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- =========================================
+       VIEW 1: LANDING PAGE
+       ========================================= -->
+  <div id="landing-view">
+    <main class="page-shell">
+      <header class="hero">
+        <h1>Massive Indian Comics Collection – <span>Savita<br class="desktop-break"> Bhabhi, Velamma &amp; 10,000+ More!</span></h1>
+        <h2>100% SATISFACTION GUARANTEED <span>(HINDI+ENG)</span></h2>
+
+        <div class="video-frame">
+          <video id="promo-video" controls playsinline preload="metadata">
+            <source src="https://comicbundle.digital/wp-content/uploads/2025/03/ad-Hrq0lW8tvt.mp4" type="video/mp4">
+          </video>
+        </div>
+
+        <a class="buy-button" href="#checkout" data-open-checkout aria-label="Buy the comic bundle for 299 rupees">👉🏿 Buy Now Only (<s>₹4999</s>) ₹299/- 👈🏿</a>
+        <div class="countdown" aria-label="Limited time offer countdown">
+          <div><strong data-hours>00</strong><small>HRS</small></div><b>:</b>
+          <div><strong data-minutes>15</strong><small>MINS</small></div><b>:</b>
+          <div><strong data-seconds>00</strong><small>SECS</small></div>
+        </div>
+      </header>
+
+      <section class="section samples">
+        <h2 class="section-bar">BUNDLE SAMPLE COMICS</h2>
+        <div class="benefits">
+          <p>✓ 15GB+ Comic Collection</p>
+          <p>✓ Hindi &amp; Eng Both</p>
+          <p>✓ PDFs &amp; 4k Videos</p>
+        </div>
+
+        <div class="image-grid sample-grid">
+          <figure><img loading="lazy" decoding="async" src="https://comicbundle.digital/wp-content/uploads/2025/03/Savita-Bhabhi-Episode-144-Page-000-93ul-768x852-1.jpg" alt="Sample comic cover 1"></figure>
+          <figure><img loading="lazy" decoding="async" src="https://comicbundle.digital/wp-content/uploads/2025/03/Savita-Bhabhi-Episode-151-Page-000-blky-768x852-1.jpg" alt="Sample comic cover 2"></figure>
+          <figure><img loading="lazy" decoding="async" src="https://comicbundle.digital/wp-content/uploads/2025/03/Savita-Bhabhi-Episode-145-Page-000-768x852-1.jpeg" alt="Sample comic cover 3"></figure>
+          <figure><img loading="lazy" decoding="async" src="https://comicbundle.digital/wp-content/uploads/2025/03/Savita-Bhabhi-Episode-152-Page-000-vqho-768x852-1.jpg" alt="Sample comic cover 4"></figure>
+          <figure><img loading="lazy" decoding="async" src="https://comicbundle.digital/wp-content/uploads/2025/03/Savita-Bhabhi-Episode-147-Page-000-ebfu-768x852-1.jpg" alt="Sample comic cover 5"></figure>
+          <figure><img loading="lazy" decoding="async" src="https://comicbundle.digital/wp-content/uploads/2025/03/Savita-Bhabhi-Episode-149-Page-000-jtwg-768x852-1.jpg" alt="Sample comic cover 6"></figure>
+        </div>
+
+        <div class="countdown mid-countdown" aria-label="Limited time offer countdown">
+          <div><strong data-hours>00</strong><small>HRS</small></div><b>:</b>
+          <div><strong data-minutes>15</strong><small>MINS</small></div><b>:</b>
+          <div><strong data-seconds>00</strong><small>SECS</small></div>
+        </div>
+      </section>
+
+      <section class="section feedback">
+        <h2>OUR CUSTOMERS FEEDBACK (100% SATISFACTION GUARANTEE)</h2>
+        <div class="image-grid feedback-grid">
+          <figure><img loading="lazy" decoding="async" src="https://comicbundle.digital/wp-content/uploads/2025/03/TEST1-953x1536-1-635x1024.png" alt="Customer feedback 1"></figure>
+          <figure><img loading="lazy" decoding="async" src="https://comicbundle.digital/wp-content/uploads/2025/03/TEST-3-947x1536-1-631x1024.png" alt="Customer feedback 2"></figure>
+          <figure><img loading="lazy" decoding="async" src="https://comicbundle.digital/wp-content/uploads/2025/03/TEST-2-950x1536-1-633x1024.png" alt="Customer feedback 3"></figure>
+        </div>
+
+        <a class="buy-button second-buy" href="#checkout" data-open-checkout aria-label="Buy the comic bundle for 299 rupees">👉🏿 Buy Now Only (<s>₹4999</s>) ₹299/- 👈🏿</a>
+        <p class="offer-note">Limited Time Offer (Ending Soon)</p>
+        <div class="countdown" aria-label="Limited time offer countdown">
+          <div><strong data-hours>00</strong><small>HRS</small></div><b>:</b>
+          <div><strong data-minutes>15</strong><small>MINS</small></div><b>:</b>
+          <div><strong data-seconds>00</strong><small>SECS</small></div>
+        </div>
+      </section>
+
+      <section class="faq section">
+        <h2>Frequently Asked Questions (FAQs)</h2>
+        <div class="accordion">
+          <details>
+            <summary>How will we receive the comics after payment?</summary>
+            <p>Once your payment is confirmed, you will receive a download link via email or on the purchase page.</p>
+          </details>
+          <details>
+            <summary>How long will we have access to these comics?</summary>
+            <p>You will have lifetime access to the downloaded comics, and if you lost the link simply drop us an email at <a href="mailto:support@comicworld.info">support@comicworld.info</a> with payment screenshot our team will re-share the link.</p>
+          </details>
+          <details>
+            <summary>What is the size of the comic bundle?</summary>
+            <p>The size of the bundle is 15GB+ and you can download it in your phone/computer and also you can read only so no need to download.</p>
+          </details>
+          <details>
+            <summary>Can we download this comics bundle?</summary>
+            <p>Yes you can download all comics directly in HD.</p>
+          </details>
+          <details>
+            <summary>Got more questions?</summary>
+            <p>Please Email us at <a href="mailto:support@comicworld.info">support@comicworld.info</a> for more questions.</p>
+          </details>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <a class="mobile-cta" href="#checkout" data-open-checkout aria-label="Buy the comic bundle for 299 rupees">BUY NOW — ₹299</a>
+
+  <!-- =========================================
+       VIEW 2: CHECKOUT / BILLING DETAILS
+       ========================================= -->
+  <div id="checkout-view">
+    <div class="topbar">
+      <a href="#offer" data-back-to-offer>← Back</a>
+      <a href="#checkout" class="active">Information</a>
+      <a href="#finish" onclick="document.getElementById('place-order-btn').scrollIntoView({behavior:'smooth'}); return false;">Finish</a>
+    </div>
+
+    <div class="container">
+      <h2>Billing details</h2>
+
+      <div id="checkout-error" class="error-banner" role="alert">
+        कृपया सभी अनिवार्य फ़ील्ड भरें (First name, Email, Phone)
+      </div>
+
+      <div class="card">
+        <div class="form-group">
+          <label for="billing-first-name">First name <span class="required">*</span></label>
+          <input id="billing-first-name" type="text" placeholder="First name" autocomplete="given-name">
+        </div>
+        <div class="form-group">
+          <label for="billing-last-name">Last name</label>
+          <input id="billing-last-name" type="text" placeholder="Last name" autocomplete="family-name">
+        </div>
+        <div class="form-group">
+          <label for="billing-email">Email address <span class="required">*</span></label>
+          <input id="billing-email" type="email" placeholder="you@example.com" autocomplete="email">
+        </div>
+        <div class="form-group">
+          <label for="billing-phone">Phone <span class="required">*</span></label>
+          <input id="billing-phone" type="tel" inputmode="tel" placeholder="Phone number" autocomplete="tel">
+        </div>
+      </div>
+
+      <h2 class="section-title">Your order</h2>
+
+      <table class="order-table">
+        <tr>
+          <td class="product-cell">
+            <div class="product-summary">
+              <img src="https://comicbundle.digital/wp-content/uploads/2025/03/Savita-Bhabhi-Episode-144-Page-000-93ul-768x852-1.jpg" alt="Product">
+              <div>
+                <strong>Product</strong>
+                <div style="font-size: 13px; color: #555; margin-top: 4px;">
+                  10000+ Comics<br>
+                  And Comics<br>
+                  Videos (All Genre)<br>
+                  English+hindi
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="product-cell" style="text-align: right; vertical-align: top;">
+            <strong>Subtotal</strong>
+          </td>
+        </tr>
+        <tr>
+          <td class="product-cell">Subtotal</td>
+          <td class="product-cell" style="text-align: right;">₹299.00</td>
+        </tr>
+        <tr class="total-row">
+          <td>Total</td>
+          <td>₹299.00</td>
+        </tr>
+      </table>
+
+      <div class="pay-method">
+        <h4>Pay by UPI</h4>
+        <p>Pay with Google Pay, PhonePe, Paytm or any UPI app. You will go to a secure Payplus page to pay.</p>
+        <div class="privacy-text">
+          Your personal data will be used to process your order, support your experience throughout this website, and for other purposes described in our privacy policy.
+        </div>
+      </div>
+
+      <button id="place-order-btn" class="place-order-btn" type="button" onclick="goToPayment()">PLACE ORDER ₹299.00</button>
+
+      <div class="guarantee">100% money back guarantee!</div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      const LANDING_TITLE = "Comic World — Massive Indian Comics Collection";
+      const CHECKOUT_TITLE = "Billing Details — Comic World";
+      const PAYMENT_URL = "https://new.payplus.live/link/PL_B9NWENFRD550FYVFFZF2";
+      const COUNTDOWN_SECONDS = 15 * 60;
+      const STORAGE_KEY = "cw_offer_deadline";
+
+      const promoVideo = document.getElementById("promo-video");
+      const landingView = document.getElementById("landing-view");
+      const checkoutView = document.getElementById("checkout-view");
+
+      function setView(isCheckout) {
+        if (isCheckout) {
+          if (promoVideo && !promoVideo.paused) {
+            promoVideo.pause();
+          }
+          document.body.classList.add("checkout-mode");
+          landingView.hidden = true;
+          checkoutView.hidden = false;
+          document.title = CHECKOUT_TITLE;
+          window.scrollTo(0, 0);
+        } else {
+          document.body.classList.remove("checkout-mode");
+          landingView.hidden = false;
+          checkoutView.hidden = true;
+          document.title = LANDING_TITLE;
+          window.scrollTo(0, 0);
+        }
+      }
+
+      function syncRoute() {
+        const isCheckout = window.location.hash === "#checkout";
+        setView(isCheckout);
+      }
+
+      document.querySelectorAll("[data-open-checkout]").forEach(function (btn) {
+        btn.addEventListener("click", function (e) {
+          e.preventDefault();
+          if (window.location.hash !== "#checkout") {
+            history.pushState(null, "", "#checkout");
+          }
+          setView(true);
+        });
       });
-    }
-    tick(); setInterval(tick, 1000);
-  })();
-</script>
 
+      document.querySelectorAll("[data-back-to-offer]").forEach(function (btn) {
+        btn.addEventListener("click", function (e) {
+          e.preventDefault();
+          if (window.location.hash === "#checkout") {
+            history.pushState(null, "", window.location.pathname + window.location.search);
+          }
+          setView(false);
+        });
+      });
+
+      window.addEventListener("popstate", syncRoute);
+      window.addEventListener("hashchange", syncRoute);
+      syncRoute();
+
+      // Synchronized 15-minute countdown timer
+      const hourEls = document.querySelectorAll("[data-hours]");
+      const minEls = document.querySelectorAll("[data-minutes]");
+      const secEls = document.querySelectorAll("[data-seconds]");
+
+      function getDeadline() {
+        try {
+          const saved = Number(sessionStorage.getItem(STORAGE_KEY));
+          if (saved && saved > Date.now()) {
+            return saved;
+          }
+          const next = Date.now() + COUNTDOWN_SECONDS * 1000;
+          sessionStorage.setItem(STORAGE_KEY, String(next));
+          return next;
+        } catch (_) {
+          return Date.now() + COUNTDOWN_SECONDS * 1000;
+        }
+      }
+
+      let deadline = getDeadline();
+
+      function pad(n) {
+        return String(n).padStart(2, "0");
+      }
+
+      function tickCountdown() {
+        let remaining = Math.floor((deadline - Date.now()) / 1000);
+        if (remaining <= 0) {
+          deadline = Date.now() + COUNTDOWN_SECONDS * 1000;
+          try {
+            sessionStorage.setItem(STORAGE_KEY, String(deadline));
+          } catch (_) {}
+          remaining = COUNTDOWN_SECONDS;
+        }
+
+        const hrs = Math.floor(remaining / 3600);
+        const mins = Math.floor((remaining % 3600) / 60);
+        const secs = remaining % 60;
+
+        const hStr = pad(hrs);
+        const mStr = pad(mins);
+        const sStr = pad(secs);
+
+        hourEls.forEach(function (el) { el.textContent = hStr; });
+        minEls.forEach(function (el) { el.textContent = mStr; });
+        secEls.forEach(function (el) { el.textContent = sStr; });
+      }
+
+      tickCountdown();
+      setInterval(tickCountdown, 1000);
+
+      // Clear error styling on input
+      ["billing-first-name", "billing-email", "billing-phone"].forEach(function (id) {
+        const input = document.getElementById(id);
+        if (input) {
+          input.addEventListener("input", function () {
+            input.classList.remove("input-error");
+            const banner = document.getElementById("checkout-error");
+            if (banner) banner.classList.remove("visible");
+          });
+        }
+      });
+
+      // Expose goToPayment globally for button onclick
+      window.goToPayment = function () {
+        const firstNameInput = document.getElementById("billing-first-name");
+        const emailInput = document.getElementById("billing-email");
+        const phoneInput = document.getElementById("billing-phone");
+        const errorBanner = document.getElementById("checkout-error");
+
+        const firstName = firstNameInput.value.trim();
+        const email = emailInput.value.trim();
+        const phone = phoneInput.value.trim();
+
+        let firstMissing = null;
+        [
+          [firstNameInput, firstName],
+          [emailInput, email],
+          [phoneInput, phone]
+        ].forEach(function (pair) {
+          const el = pair[0];
+          const val = pair[1];
+          if (!val) {
+            el.classList.add("input-error");
+            if (!firstMissing) firstMissing = el;
+          } else {
+            el.classList.remove("input-error");
+          }
+        });
+
+        if (firstMissing) {
+          errorBanner.textContent = "कृपया सभी अनिवार्य फ़ील्ड भरें (First name, Email, Phone)";
+          errorBanner.classList.add("visible");
+          firstMissing.focus();
+          return;
+        }
+
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailPattern.test(email)) {
+          emailInput.classList.add("input-error");
+          errorBanner.textContent = "कृपया सही Email address दर्ज करें (Please enter a valid email)";
+          errorBanner.classList.add("visible");
+          emailInput.focus();
+          return;
+        }
+
+        errorBanner.classList.remove("visible");
+
+        // Redirect to Payplus payment page (works on live domain and inside preview iframes)
+        if (window.self !== window.top) {
+          window.open(PAYMENT_URL, "_blank", "noopener,noreferrer");
+        } else {
+          window.location.href = PAYMENT_URL;
+        }
+      };
+    })();
+  </script>
 </body>
 </html>
